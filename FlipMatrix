@@ -1,0 +1,71 @@
+class Solution {
+    int i=0,j=0;
+     int m=0;int n=0;
+
+    public Solution(int m, int n) {
+        this.m=m;
+        this.n=n;
+    }
+    
+    public int[] flip() {
+        j++;
+        if(j==n){
+            j=0;
+            i++;
+        }
+        if(i==m){
+            i=0;
+            j=0;
+        }
+
+             
+        return new int[]{i,j};
+        
+    }
+    
+    public void reset() {
+      
+        
+        
+        
+    }
+}
+
+/**
+ * Your Solution object will be instantiated and called as such:
+ * Solution obj = new Solution(m, n);
+ * int[] param_1 = obj.flip();
+ * obj.reset();
+ */
+// class Solution {
+//     int [][] mat;
+   
+//     public Solution(int m, int n) {
+//         mat=new int[m][n];
+//     }
+    
+//     public int[] flip() {
+//         int m=mat.length,n=mat[0].length;
+//          Random random=new Random();
+//         int row,col;
+//         do{
+//             row=random.nextInt(m);
+//             col=random.nextInt(n);
+//         }while(mat[row][col]!=0);
+//         mat[row][col]=1;
+//         int []choice={row,col};
+//         return choice;
+//     }
+    
+//     public void reset() {
+//         int m=mat.length,n=mat[0].length;
+//         mat=new int[m][n];
+//     }
+// }
+
+/**
+ * Your Solution object will be instantiated and called as such:
+ * Solution obj = new Solution(m, n);
+ * int[] param_1 = obj.flip();
+ * obj.reset();
+ */
