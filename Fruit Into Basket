@@ -1,0 +1,38 @@
+class Solution {
+    public int totalFruit(int[] fruits) {
+       // int [] count = new int[fruits.length];
+        int firstBasket=0,secondBasket=0,count=1;
+        int firstFruit=-1,secondFruit=-1,numberOfFruits=0;
+        for(int i=0;i<fruits.length;i++){
+            if(firstFruit!=fruits[i]&&fruits[i]!=secondFruit&firstFruit==-1)
+            {
+                firstFruit=fruits[i];
+                firstBasket=0;
+            }
+            else if(secondFruit!=fruits[i]&&fruits[i]!=firstFruit&&secondFruit==-1)
+            {
+                secondFruit=fruits[i];
+                secondBasket=0;
+            }
+            if(fruits[i]!=firstFruit&&fruits[i]!=secondFruit){
+                firstFruit=fruits[i-1];
+                firstBasket=count;
+                secondFruit=fruits[i];
+                secondBasket=0;
+            }
+            if(i>1){count=(fruits[i]==fruits[i-1])?count+1:1;}
+            System.out.print(count+" ");
+            if(fruits[i]==firstFruit)
+            {
+                firstBasket++;
+            }
+            else if(fruits[i]==secondFruit)
+            {
+                secondBasket++;
+            }
+            numberOfFruits=Math.max(numberOfFruits,(firstBasket+secondBasket));
+
+        }
+        return numberOfFruits;
+    }
+}
